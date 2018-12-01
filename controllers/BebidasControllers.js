@@ -3,10 +3,11 @@ const BebidasControllers = {};
 
 BebidasControllers.create = function(req, res){
     let data = {
-        marca: req.marca,
-        tipo: req.tipo,
-        annios: req.annios
+        marca: req.body.marca,
+        tipo: req.body.tipo,
+        annios: req.body.annios
     }
+    console.log(data);    
     let nuevaBebida = new BebidasModel(data);
     nuevaBebida.save(function(err, guardado){
         if (err){
@@ -42,9 +43,9 @@ BebidasControllers.get = function(req, res){
 
 BebidasControllers.update = function(req, res){
     let update = {
-        marca: req.marca,
-        tipo: req.tipo,
-        annios: req.annios
+        marca: req.body.marca,
+        tipo: req.body.tipo,
+        annios: req.body.annios
     }
     BebidasModel.findByIdAndUpdate(req.params.id, update, function(err, old){
         if (err){

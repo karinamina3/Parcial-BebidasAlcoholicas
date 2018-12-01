@@ -3,12 +3,12 @@ extends layout
 block content
   h1 Administrador de Bebidas Alcoholicas
   form(action="/bebidas", method="POST", name="BebidasForm")
-    label(for="marca") Marca
-    input(type="text", name="marca")
-    label(for="tipo") Tipo de Alcohol
-    input(type="text", name="tipo")
-    label(for="annios") Años de Añejo
-    input(type="number", name="annios")
+    label(for="marca") Marca:
+    input(type="text", name="marca", required)
+    label(for="tipo") Tipo de Alcohol:
+    input(type="text", name="tipo", required)
+    label(for="annios") Años de Añejo:
+    input(type="number", name="annios", required)
     input(type="submit", value="Guardar")
 
   table
@@ -19,4 +19,3 @@ block content
       th Años de Añejo
     tbody.bebidas
     script(src="/javascripts/main.js")
-
