@@ -1,6 +1,6 @@
 //Credenciales
 module.exports = {
     mongodb: {
-        URI: 'mongodb://localhost:27017/BebidasAlcoholicas'
+        URI: 'mongodb://localhost:27017/parcial'
     }
 };

@@ -5,4 +5,4 @@ let BebidasModel = new mongoose.Schema({
     annios: {type:Number, required:true}
 });
 
-module.exports = mongoose.model('BebidaAlcoholica', BebidasModel);
+module.exports = mongoose.model('bebidas', BebidasModel);
