@@ -1,21 +1,25 @@
 extends layout
 
 block content
-  h1 Administrador de Bebidas Alcoholicas
-  form(action="/api/BebidasAlcoholicas", method="POST", name="BebidasForm")
-    label(for="marca") Marca:
-    input(type="text", name="marca", required)
-    label(for="tipo") Tipo de Alcohol:
-    input(type="text", name="tipo", required)
-    label(for="annios") Años de Añejo:
-    input(type="number", name="annios", required)
-    input(type="submit", value="Guardar")
-
-  table
-    thead
-      th Id
-      th Marca
-      th Tipo de Alcohol
-      th Años de Añejo
-    tbody.bebidas
-    script(src="/javascripts/main.js")
+  .container
+    h1 Administrador de Bebidas Alcoholicas
+    form(action="/api/BebidasAlcoholicas", method="POST", name="BebidasForm")
+      .div
+        label(for="marca") Marca:
+        input(type="text", name="marca", required)
+      .div
+        label(for="tipo") Tipo de Alcohol:
+        input(type="text", name="tipo", required)
+      .div
+        label(for="annios") Años de Añejo:
+        input(type="number", name="annios", required)
+      .div
+        input(type="submit", value="Guardar", class="boton")
+    table
+      thead
+        th Id
+        th Marca
+        th Tipo de Alcohol
+        th Años de Añejo
+      tbody.bebidas
+      script(src="/javascripts/main.js")

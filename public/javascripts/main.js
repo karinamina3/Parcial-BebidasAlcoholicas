@@ -37,15 +37,16 @@ let app = {
         fetch('api/BebidasAlcoholicas', {
             method: 'POST',
             body: JSON.stringify(data),
-            headers: {'content-Type':'application/json'}
-        }).then(res => res.json)
-        .then(_data => {
-            if(_data.ok){
+            headers: {'Content-Type':'application/json'}
+        }).then(res => res.json())
+        .then(_data => {            
+            if(_data.ok){                
+                console.log(_data.guardado);
                 addRow(_data.guardado);
             } 
         });
     },
-
+    
     addRow: function(data){
         let tbody = document.getElementsByClassName("bebidas")[0];
         let tr = document.createElement("tr");
@@ -55,7 +56,23 @@ let app = {
                         <td> ${data.annios} </td>
                         <td>
                             <a href="#" class="delete"> <i class="far fa-trash-alt"></i> </a>
-                            <a href="#" class="update"> <i class="far fa-edit"></i> </a>` 
+                            <a href="#" class="update"> <i class="far fa-edit"></i> </a>
+                        </td>` 
+        //tr.getElementsByClassName("delete")[0].addEventListener("click", (event) => {
+        //    this.delete(event, data, tr, tbody);
+        //});
         tbody.appendChild(tr);
-    }
+    },
+
+    /*delete: function(event, data, tr, tbody){
+        event.preventDefault();
+        fetch('/api/BebidasAlcoholicas/' + data._id, {
+            method: 'DELETE'
+        }).then(res => res.json())
+        .then(res => {
+            if (res.ok){
+                tbody.removeChild(tr);
+            }
+        });
+    }*/
 }

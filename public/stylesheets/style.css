@@ -1,8 +1,55 @@
 body {
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  padding: 5em;
+  font: 20px "Lucida Grande", Helvetica, Arial, sans-serif;
+  background-color: rgb(174, 212, 245);
+}
+
+.container {
+  padding: 5em;
+  background-color: aliceblue;
+  border-radius: 2em;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+form {
+  display: flex;
+  flex-direction: row;  
+}
+
+form .div {
+  margin: 1em;
+}
+
+form label {
+  margin: 1em;
+}
+
+form .boton {
+  background-color: rgb(24, 81, 167);
+  border: none;
+  font-size: 1em;
+  width: 7em;
+  color: #ffffff;
+}
+
+h1 {
+  font-family: 'Sedgwick Ave', cursive;
+  color: rgb(24, 81, 167);
+}
+
+table {
+  margin-top: 1.5em;
+  border: 1px solid #000000;
+  background-color: #d4f2f3;
+}
+
+table th {
+  padding: 10px;
 }
 
 a {
   color: #00B7FF;
+  text-decoration: none;
 }

@@ -15,7 +15,7 @@ BebidasControllers.create = function(req, res){
                 res.status(500);
                 res.json({code:500, err});
             } else {
-                res.json({ok:true, message:'Bebida guardada con éxito', guardado})
+                res.json({ok:true, message:'Bebida guardada con éxito', guardado});
             }
         });
     } else {
