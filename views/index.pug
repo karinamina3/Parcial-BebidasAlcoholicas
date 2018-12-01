@@ -1,5 +1,22 @@
 extends layout
 
 block content
-  h1= title
-  p Welcome to #{title}
+  h1 Administrador de Bebidas Alcoholicas
+  form(action="/bebidas", method="POST", name="BebidasForm")
+    label(for="marca") Marca
+    input(type="text", name="marca")
+    label(for="tipo") Tipo de Alcohol
+    input(type="text", name="tipo")
+    label(for="annios") Años de Añejo
+    input(type="number", name="annios")
+    input(type="submit", value="Guardar")
+
+  table
+    thead
+      th Id
+      th Marca
+      th Tipo de Alcohol
+      th Años de Añejo
+    tbody.bebidas
+    script(src="/javascripts/main.js")
+
