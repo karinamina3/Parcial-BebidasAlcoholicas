@@ -22,7 +22,7 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
-app.use('/bebidas', bebidasRouter);
+app.use('/api/BebidasAlcoholicas', bebidasRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

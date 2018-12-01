@@ -2,7 +2,7 @@ extends layout
 
 block content
   h1 Administrador de Bebidas Alcoholicas
-  form(action="/bebidas", method="POST", name="BebidasForm")
+  form(action="/api/BebidasAlcoholicas", method="POST", name="BebidasForm")
     label(for="marca") Marca:
     input(type="text", name="marca", required)
     label(for="tipo") Tipo de Alcohol:

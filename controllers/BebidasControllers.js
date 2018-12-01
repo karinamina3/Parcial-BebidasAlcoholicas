@@ -7,16 +7,20 @@ BebidasControllers.create = function(req, res){
         tipo: req.body.tipo,
         annios: req.body.annios
     }
-    console.log(data);    
-    let nuevaBebida = new BebidasModel(data);
-    nuevaBebida.save(function(err, guardado){
-        if (err){
-            res.status(500);
-            res.json({code:500, err});
-        } else {
-            res.json({ok:true, message:'Bebida guardada con éxito', guardado})
-        }
-    });
+    console.log(data);
+    if (req.body.annios > 0) {
+        let nuevaBebida = new BebidasModel(data);
+        nuevaBebida.save(function(err, guardado){
+            if (err){
+                res.status(500);
+                res.json({code:500, err});
+            } else {
+                res.json({ok:true, message:'Bebida guardada con éxito', guardado})
+            }
+        });
+    } else {
+        console.log("Coloca un Año de Añejo mayor que cero");
+    }
 }
 
 BebidasControllers.getAll = function(req, res){
